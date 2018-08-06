@@ -1,5 +1,8 @@
 'use strict';
 
+var hours = ['6am: ', '7am: ', '8am: ', '9am: ', '10am: ', '11am: ', '12pm: ', '1pm: ', '2pm: ', '3pm: ', '4pm: ',
+  '5pm: ', '6pm: ', '7pm: ', '8pm: ', 'Total:'];
+
 var firstAndPike = {
   minCustomers: 23,
   maxCustomers: 65,
@@ -51,5 +54,10 @@ function cookieSales() {
   for(var i = 0; i < 15; i++) {
     cookies[i] = Math.round(this.customersPerHour() * this.avgSales);
   }
+  var x = cookies[0];
+  for(i = 0; i < cookies.length; i++) {
+    x = x + cookies[i];
+  }
+  cookies.push(x);
   return cookies;
 }
