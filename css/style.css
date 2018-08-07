@@ -1,0 +1,26 @@
+heading {
+  font-size: 2em;
+  text-align: center;
+}
+
+nav {
+  font-size: .5em;
+}
+
+article {
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+body {
+  background-color: salmon;
+}
+
+/* h3 {
+  display: inline-block;
+  width: auto;
+}
+
+ul {  
+  display: inline-block;  
+  width: auto;
+} */
