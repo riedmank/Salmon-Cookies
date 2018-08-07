@@ -80,7 +80,7 @@ function renderFooter(){
       footContent.textContent = 'Daily Totals';
     } else {
       footContent.textContent = firstAndPike.hourlySales[i] + seaTacAirport.hourlySales[i] +
-    seattleCenter.hourlySales[i] + capitolHill.hourlySales[i] + alki.hourlySales[i];
+      seattleCenter.hourlySales[i] + capitolHill.hourlySales[i] + alki.hourlySales[i];
     }
     footer.appendChild(footContent);
   }
