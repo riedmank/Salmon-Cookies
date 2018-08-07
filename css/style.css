@@ -15,12 +15,7 @@ body {
   background-color: salmon;
 }
 
-/* h3 {
-  display: inline-block;
-  width: auto;
+table, td, tr {
+  padding: 7px;
+  border: 2px solid black;
 }
-
-ul {  
-  display: inline-block;  
-  width: auto;
-} */
