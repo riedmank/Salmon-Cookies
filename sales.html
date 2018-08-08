@@ -10,12 +10,12 @@
 </head>
 <body>
   <heading>
-    <h1>Sales Page</h1>
+    <h1>Cookie Sales Page</h1>
     <nav><a href="index.html">Main Page</a></nav>
   </heading>
   <article>
     <table>
-      <h3>Cookie Sales</h3>
+      <h3>Daily Cookie Sales</h3>
       <thead id="head">
       </thead>
       <tbody id="body">
@@ -30,6 +30,20 @@
       <tbody id="body1">
       </tbody>
     </table>
+    <h3>Create New Store</h3>
+    <section>
+      <form id="storeForm">
+        <div>
+          <label for="name">Enter Store Name: </label><input id="name" name="name" type="text" minlength="2" maxlength="20">
+        </div>
+        <fieldset>
+            <label for="minCustomers">Enter minimum customers per hour: </label><input id="minCustomers" type="number" min="0"><br>
+            <label for="maxCustomers">Enter maximum customers per hour: </label><input id="maxCustomers" type="number" min="0"><br>
+            <label for="avgSales">Enter average sales per hour: </label><input id="avgSales" type="number" step=".1">
+        </fieldset>
+        <input type="submit" value="Add Store">
+      </form>
+    </section>
   </article>
 </body>
 <script src="js/app.js"></script>

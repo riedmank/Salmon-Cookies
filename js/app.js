@@ -92,6 +92,7 @@ function renderCookieTosser(string) {
 function renderFooter(){
   var tfooter = document.getElementById('foot');
   var footer = document.createElement('tr');
+  footer.setAttribute('id', 'dailyTotals');
   for (var i = 0; i < header.length; i++) {
     var footContent = document.createElement('td');
     if (i === 0) {
@@ -108,6 +109,25 @@ function renderFooter(){
   tfooter.appendChild(footer);
 }
 
+// User input from forms added to page
+var formElt = document.getElementById('storeForm');
+formElt.addEventListener('submit', function(e) {
+  e.preventDefault();
+  if (parseInt(e.target.minCustomers.value) > parseInt(e.target.maxCustomers.value)) {
+    return alert('Minimum customers needs to be lower than maximum customers.');
+  }
+  var userStore = new Store(e.target.name.value, e.target.minCustomers.value, e.target.maxCustomers.value, e.target.avgSales.value);
+  this.hourlySales = userStore.cookieSales();
+  storeObjects.push(userStore);
+  storeObjects[storeObjects.length - 1].renderStoreInfo('body');
+  var tfooter = document.getElementById('foot');
+  var foot = document.getElementById('dailyTotals');
+  tfooter.removeChild(foot);
+  renderFooter();
+  storeObjects[storeObjects.length - 1].renderCookieTosser('body1');
+  formElt.reset();
+});
+
 // Function calls
 for(var i = 0; i < storeObjects.length; i++) {
   storeObjects[i].cookieSales();
@@ -118,6 +138,6 @@ for(i = 0; i < storeObjects.length; i++) {
 }
 renderFooter();
 renderHeader('head1');
-for(var h = 0; h < storeObjects.length; h++) {
-  storeObjects[h].renderCookieTosser('body1');
+for(i = 0; i < storeObjects.length; i++) {
+  storeObjects[i].renderCookieTosser('body1');
 }
