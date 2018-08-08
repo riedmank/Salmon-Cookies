@@ -92,6 +92,7 @@ function renderCookieTosser(string) {
 function renderFooter(){
   var tfooter = document.getElementById('foot');
   var footer = document.createElement('tr');
+  footer.setAttribute('id', 'dailyTotals');
   for (var i = 0; i < header.length; i++) {
     var footContent = document.createElement('td');
     if (i === 0) {
@@ -107,6 +108,22 @@ function renderFooter(){
   }
   tfooter.appendChild(footer);
 }
+
+// User input from forms
+var formElt = document.getElementById('storeForm');
+formElt.addEventListener('submit', function(e) {
+  e.preventDefault();
+  var userStore = new Store(e.target.name.value, e.target.minCustomers.value, e.target.maxCustomers.value, e.target.avgSales.value);
+  this.hourlySales = userStore.cookieSales();
+  storeObjects.push(userStore);
+  storeObjects[storeObjects.length - 1].renderStoreInfo('body');
+  var tfooter = document.getElementById('foot');
+  var foot = document.getElementById('dailyTotals');
+  tfooter.removeChild(foot);
+  renderFooter();
+  storeObjects[storeObjects.length - 1].renderCookieTosser('body1');
+  formElt.reset();
+});
 
 // Function calls
 for(var i = 0; i < storeObjects.length; i++) {
