@@ -1,33 +1,53 @@
 h1 {
-  margin-top: 30px;
-  margin-bottom: 15px;
+  margin: 30px 30% 15px 30%;
   font-size: 4em;
   text-align: center;
   font-weight: bolder;
+  background-color: salmon;
+  border: 2px solid black;
+  min-width: 200px;
+  font-family: 'Courier New', Courier, monospace;
 }
 
 h3 {
-  margin-top: 30px;
+  margin: 30px 40% 0px 40%;
   font-size: 1.5em;
   text-align: center;
+  font-weight: bold;
+  background-color: salmon;
+  border: 2px solid black;
+  min-width: 150px;
 }
 
 nav {
   text-align: center;
-  margin-bottom: 40px;
+  margin: 0px 40% 40px 40%;
+  background-color: salmon;
+  padding: 7px;
+  border: 2px solid black;
+  min-width: 100px;
+  font-family: 'Courier New', Courier, monospace;
 }
 
 article {
-  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  font-family: 'Courier New', Courier, monospace;
 }
 
 body {
-  background-color: salmon;
+  background-color: darkgreen;
+  background-image: url('../img/salmon.png');
+  background-attachment: fixed;
+  background-size: 30%;
 }
 
 table, td, tr {
-  padding: 7px;
+  background-color: salmon;
+  padding: 6px;
   border: 2px solid black;
+}
+
+thead {
+  font-weight: bold;
 }
 
 tr:hover {
@@ -35,7 +55,25 @@ tr:hover {
 }
 
 table {
-  margin-top: 30px;
-  margin-left: 20px;
-  margin-bottom: 30px;
+  margin: 10px 1% 30px 3%;
+}
+
+section {
+  margin: 10px 60% 40px 15%;
+  background-color: salmon;
+  border: 2px solid black;
+  padding: 3px;
+  min-width: 200px;
+}
+
+h3:last-of-type {
+  margin: 30px 60% 10px 15%;
+}
+
+label {
+  margin-bottom: 4px;
+}
+
+input {
+  margin-bottom: 4px;
 }

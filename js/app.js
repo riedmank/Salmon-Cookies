@@ -113,7 +113,7 @@ function renderFooter(){
 var formElt = document.getElementById('storeForm');
 formElt.addEventListener('submit', function(e) {
   e.preventDefault();
-  if (e.target.minCustomers.value > e.target.maxCustomers.value) {
+  if (parseInt(e.target.minCustomers.value) > parseInt(e.target.maxCustomers.value)) {
     return alert('Minimum customers needs to be lower than maximum customers.');
   }
   var userStore = new Store(e.target.name.value, e.target.minCustomers.value, e.target.maxCustomers.value, e.target.avgSales.value);
