@@ -24,6 +24,7 @@ var alki = new Store('Alki', 2, 16, 4.6);
 Store.prototype.randomSales = randomSales;
 Store.prototype.cookieSales = cookieSales;
 Store.prototype.renderStoreInfo = renderStoreInfo;
+Store.prototype.renderCookieTosser = renderCookieTosser;
 
 // Array of objects
 var storeObjects = [firstAndPike, seaTacAirport, seattleCenter, capitolHill, alki];
@@ -45,11 +46,22 @@ function cookieSales() {
   return this.hourlySales;
 }
 
+// Add info to header
+function renderHeader(string) {
+  var theader = document.getElementById(string);
+  var heading = document.createElement('tr');
+  for (var i = 0; i < header.length; i++) {
+    var headContent = document.createElement('td');
+    headContent.textContent = header[i];
+    heading.appendChild(headContent);
+  }
+  theader.appendChild(heading);
+}
+
 // Add info to page
-function renderStoreInfo() {
-  var tbody = document.getElementById('body');
+function renderStoreInfo(string) {
+  var tbody = document.getElementById(string);
   var storeInfo = document.createElement('tr');
-  this.cookieSales();
   for(var j = 0; j < this.hourlySales.length; j++) {
     var storeSales = document.createElement('td');
     storeSales.textContent = this.hourlySales[j];
@@ -58,16 +70,21 @@ function renderStoreInfo() {
   tbody.appendChild(storeInfo);
 }
 
-// Add info to header
-function renderHeader() {
-  var theader = document.getElementById('head');
-  var heading = document.createElement('tr');
-  for (var i = 0; i < header.length; i++) {
-    var headContent = document.createElement('td');
-    headContent.textContent = header[i];
-    heading.appendChild(headContent);
+function renderCookieTosser(string) {
+  var tbody = document.getElementById(string);
+  var storeInfo = document.createElement('tr');
+  for(var j = 0; j < this.hourlySales.length; j++) {
+    var storeSales = document.createElement('td');
+    if (j === 0) {
+      storeSales.textContent = this.hourlySales[j];
+    } else if ((this.hourlySales[j]) / 20 < 2) {
+      storeSales.textContent = 2;
+    } else {
+      storeSales.textContent = Math.round(this.hourlySales[j] / 20);
+    }
+    storeInfo.appendChild(storeSales);
   }
-  theader.appendChild(heading);
+  tbody.appendChild(storeInfo);
 }
 
 // Add info to footer
@@ -88,8 +105,17 @@ function renderFooter(){
 }
 
 // Function calls
-renderHeader();
 for(var i = 0; i < storeObjects.length; i++) {
-  storeObjects[i].renderStoreInfo();
+  storeObjects[i].cookieSales();
+}
+
+renderHeader('head');
+for(i = 0; i < storeObjects.length; i++) {
+  storeObjects[i].renderStoreInfo('body');
 }
 renderFooter();
+
+renderHeader('head1');
+for(var h = 0; h < storeObjects.length; h++) {
+  storeObjects[h].renderCookieTosser('body1');
+}
