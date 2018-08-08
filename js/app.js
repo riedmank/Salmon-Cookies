@@ -109,10 +109,13 @@ function renderFooter(){
   tfooter.appendChild(footer);
 }
 
-// User input from forms
+// User input from forms added to page
 var formElt = document.getElementById('storeForm');
 formElt.addEventListener('submit', function(e) {
   e.preventDefault();
+  if (e.target.minCustomers.value > e.target.maxCustomers.value) {
+    return alert('Minimum customers needs to be lower than maximum customers.');
+  }
   var userStore = new Store(e.target.name.value, e.target.minCustomers.value, e.target.maxCustomers.value, e.target.avgSales.value);
   this.hourlySales = userStore.cookieSales();
   storeObjects.push(userStore);
@@ -135,6 +138,6 @@ for(i = 0; i < storeObjects.length; i++) {
 }
 renderFooter();
 renderHeader('head1');
-for(var h = 0; h < storeObjects.length; h++) {
-  storeObjects[h].renderCookieTosser('body1');
+for(i = 0; i < storeObjects.length; i++) {
+  storeObjects[i].renderCookieTosser('body1');
 }
