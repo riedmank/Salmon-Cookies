@@ -1,10 +1,20 @@
-heading {
-  font-size: 2em;
+h1 {
+  margin-top: 30px;
+  margin-bottom: 15px;
+  font-size: 4em;
+  text-align: center;
+  font-weight: bolder;
+}
+
+h3 {
+  margin-top: 30px;
+  font-size: 1.5em;
   text-align: center;
 }
 
 nav {
-  font-size: .5em;
+  text-align: center;
+  margin-bottom: 40px;
 }
 
 article {
@@ -15,12 +25,16 @@ body {
   background-color: salmon;
 }
 
-/* h3 {
-  display: inline-block;
-  width: auto;
+table, td, tr {
+  padding: 7px;
+  border: 2px solid black;
 }
 
-ul {  
-  display: inline-block;  
-  width: auto;
-} */
+tr:hover {
+  background-color: ivory;
+}
+
+table {
+  margin-top: 30px;
+  margin-left: 20px;
+}
