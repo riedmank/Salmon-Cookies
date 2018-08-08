@@ -70,6 +70,7 @@ function renderStoreInfo(string) {
   tbody.appendChild(storeInfo);
 }
 
+// Add info to second table
 function renderCookieTosser(string) {
   var tbody = document.getElementById(string);
   var storeInfo = document.createElement('tr');
@@ -96,8 +97,11 @@ function renderFooter(){
     if (i === 0) {
       footContent.textContent = 'Daily Totals';
     } else {
-      footContent.textContent = firstAndPike.hourlySales[i] + seaTacAirport.hourlySales[i] +
-      seattleCenter.hourlySales[i] + capitolHill.hourlySales[i] + alki.hourlySales[i];
+      var content = 0;
+      for (var j = 0; j < storeObjects.length; j++) {
+        content += parseInt(storeObjects[j].hourlySales[i]);
+      }
+      footContent.textContent = content;
     }
     footer.appendChild(footContent);
   }
@@ -108,13 +112,11 @@ function renderFooter(){
 for(var i = 0; i < storeObjects.length; i++) {
   storeObjects[i].cookieSales();
 }
-
 renderHeader('head');
 for(i = 0; i < storeObjects.length; i++) {
   storeObjects[i].renderStoreInfo('body');
 }
 renderFooter();
-
 renderHeader('head1');
 for(var h = 0; h < storeObjects.length; h++) {
   storeObjects[h].renderCookieTosser('body1');
