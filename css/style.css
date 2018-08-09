@@ -1,3 +1,4 @@
+/* General styles */
 h1 {
   margin: 30px 30% 15px 30%;
   font-size: 4em;
@@ -29,16 +30,6 @@ nav {
   font-family: 'Courier New', Courier, monospace;
 }
 
-footer {
-  margin: 30px 30% 30px 30%;
-  font-size: 1.5em;
-  text-align: center;
-  font-weight: bold;
-  background-color: salmon;
-  border: 2px solid black;
-  min-width: 500px;
-}
-
 article {
   font-family: 'Courier New', Courier, monospace;
 }
@@ -50,35 +41,17 @@ body {
   background-size: 30%;
 }
 
-table, td, tr {
-  background-color: salmon;
-  padding: 6px;
-  border: 2px solid black;
-}
-
-thead {
+footer {
+  margin: 30px 30% 30px 30%;
+  font-size: 1.5em;
+  text-align: center;
   font-weight: bold;
-}
-
-tr:hover {
-  background-color: ivory;
-}
-
-table {
-  margin: 10px 1% 30px 3%;
-}
-
-section {
-  margin: 10px 60% 40px 15%;
-}
-
-form {
   background-color: salmon;
   border: 2px solid black;
-  padding: 3px;
-  min-width: 350px;
+  min-width: 500px;
 }
 
+/* Home page styles */
 div.storeLocations {
   background-color: salmon;
   border: 2px solid black;
@@ -128,6 +101,36 @@ div.aboutUs img {
   display: block;
   max-width: 450px;
   margin: 5px auto;
+}
+
+/* Sales page specific styles */
+table, td, tr {
+  background-color: salmon;
+  padding: 6px;
+  border: 2px solid black;
+}
+
+thead {
+  font-weight: bold;
+}
+
+tr:hover {
+  background-color: ivory;
+}
+
+table {
+  margin: 10px 1% 30px 3%;
+}
+
+section {
+  margin: 10px 60% 40px 15%;
+}
+
+form {
+  background-color: salmon;
+  border: 2px solid black;
+  padding: 3px;
+  min-width: 350px;
 }
 
 h3:last-of-type {
