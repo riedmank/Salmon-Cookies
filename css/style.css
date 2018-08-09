@@ -5,7 +5,7 @@ h1 {
   font-weight: bolder;
   background-color: salmon;
   border: 2px solid black;
-  min-width: 200px;
+  min-width: 250px;
   font-family: 'Courier New', Courier, monospace;
 }
 
@@ -63,7 +63,11 @@ section {
   background-color: salmon;
   border: 2px solid black;
   padding: 3px;
-  min-width: 200px;
+  min-width: 330x;
+}
+
+form {
+  min-width: 330x;
 }
 
 h3:last-of-type {
@@ -72,8 +76,11 @@ h3:last-of-type {
 
 label {
   margin-bottom: 4px;
+  min-width: 200px;
+  display: block;
 }
 
 input {
   margin-bottom: 4px;
+  display: block;
 }
