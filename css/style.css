@@ -5,11 +5,11 @@ h1 {
   font-weight: bolder;
   background-color: salmon;
   border: 2px solid black;
-  min-width: 250px;
+  min-width: 275px;
   font-family: 'Courier New', Courier, monospace;
 }
 
-h3 {
+h2, h3 {
   margin: 30px 40% 0px 40%;
   font-size: 1.5em;
   text-align: center;
@@ -27,6 +27,16 @@ nav {
   border: 2px solid black;
   min-width: 100px;
   font-family: 'Courier New', Courier, monospace;
+}
+
+footer {
+  margin: 30px 30% 30px 30%;
+  font-size: 1.5em;
+  text-align: center;
+  font-weight: bold;
+  background-color: salmon;
+  border: 2px solid black;
+  min-width: 500px;
 }
 
 article {
@@ -60,18 +70,70 @@ table {
 
 section {
   margin: 10px 60% 40px 15%;
-  background-color: salmon;
-  border: 2px solid black;
-  padding: 3px;
-  min-width: 330x;
 }
 
 form {
-  min-width: 330x;
+  background-color: salmon;
+  border: 2px solid black;
+  padding: 3px;
+  min-width: 350px;
+}
+
+div.storeLocations {
+  background-color: salmon;
+  border: 2px solid black;
+  margin: 5px 5%;
+  padding: 3px;
+  min-width: 500px;
+  text-align: center;
+}
+
+div.locations {
+  display: block;
+  text-align: center;
+}
+
+div.locations > div {
+  display: inline-block;
+  vertical-align: middle;
+  margin: 0px 10px;
+  width: 200px;
+}
+
+.imageLocations {
+  width: 65%;
+}
+
+div.products {
+  background-color: salmon;
+  border: 2px solid black;
+  margin: 5px 5%;
+  padding: 3px;
+  min-width: 500px;
+}
+
+div.images {
+  display: block;
+}
+
+div.aboutUs {
+  background-color: salmon;
+  border: 2px solid black;
+  margin: 5px 5%;
+  padding: 3px;
+  min-width: 500px;
+}
+
+div.aboutUs img {
+  display: block;
+  max-width: 450px;
+  margin: 5px auto;
 }
 
 h3:last-of-type {
   margin: 30px 60% 10px 15%;
+  padding: 3px;
+  min-width: 350px;
 }
 
 label {
@@ -83,4 +145,8 @@ label {
 input {
   margin-bottom: 4px;
   display: block;
+}
+
+footer img {
+  margin-top: 5px;
 }
