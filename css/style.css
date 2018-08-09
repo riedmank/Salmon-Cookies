@@ -1,3 +1,4 @@
+/* General styles */
 h1 {
   margin: 30px 30% 15px 30%;
   font-size: 4em;
@@ -5,11 +6,11 @@ h1 {
   font-weight: bolder;
   background-color: salmon;
   border: 2px solid black;
-  min-width: 200px;
+  min-width: 275px;
   font-family: 'Courier New', Courier, monospace;
 }
 
-h3 {
+h2, h3 {
   margin: 30px 40% 0px 40%;
   font-size: 1.5em;
   text-align: center;
@@ -40,6 +41,69 @@ body {
   background-size: 30%;
 }
 
+footer {
+  margin: 30px 30% 30px 30%;
+  font-size: 1.5em;
+  text-align: center;
+  font-weight: bold;
+  background-color: salmon;
+  border: 2px solid black;
+  min-width: 500px;
+}
+
+/* Home page styles */
+div.storeLocations {
+  background-color: salmon;
+  border: 2px solid black;
+  margin: 5px 5%;
+  padding: 3px;
+  min-width: 500px;
+  text-align: center;
+}
+
+div.locations {
+  display: block;
+  text-align: center;
+}
+
+div.locations > div {
+  display: inline-block;
+  vertical-align: middle;
+  margin: 0px 10px;
+  width: 200px;
+}
+
+.imageLocations {
+  width: 95%;
+}
+
+div.products {
+  background-color: salmon;
+  border: 2px solid black;
+  margin: 5px 5%;
+  padding: 3px;
+  min-width: 500px;
+}
+
+div.images {
+  display: block;
+}
+
+div.aboutUs {
+  background-color: salmon;
+  border: 2px solid black;
+  margin: 5px 5%;
+  padding: 3px;
+  min-width: 500px;
+}
+
+div.aboutUs img {
+  display: block;
+  max-width: 450px;
+  margin: 5px auto;
+}
+
+/* Sales page specific styles */
 table, td, tr {
   background-color: salmon;
   padding: 6px;
@@ -60,20 +124,32 @@ table {
 
 section {
   margin: 10px 60% 40px 15%;
+}
+
+form {
   background-color: salmon;
   border: 2px solid black;
   padding: 3px;
-  min-width: 200px;
+  min-width: 350px;
 }
 
 h3:last-of-type {
   margin: 30px 60% 10px 15%;
+  padding: 3px;
+  min-width: 350px;
 }
 
 label {
   margin-bottom: 4px;
+  min-width: 200px;
+  display: block;
 }
 
 input {
   margin-bottom: 4px;
+  display: block;
+}
+
+footer img {
+  margin-top: 5px;
 }

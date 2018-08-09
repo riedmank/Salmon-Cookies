@@ -4,6 +4,9 @@
 var header = ['Store Name', '6:00 am', '7:00 am', '8:00 am', '9:00 am', '10:00 am', '11:00 am', '12:00 pm',
   '1:00 pm', '2:00 pm', '3:00 pm', '4:00 pm', '5:00 pm', '6:00 pm', '7:00 pm', '8:00 pm', 'Total'];
 
+// Array of objects
+var storeObjects = [];
+
 // Store constructor
 function Store(name, minCustomers, maxCustomers, avgSales) {
   this.name = name;
@@ -11,6 +14,7 @@ function Store(name, minCustomers, maxCustomers, avgSales) {
   this.maxCustomers = maxCustomers;
   this.avgSales = avgSales;
   this.hourlySales = [];
+  storeObjects.push(this);
 }
 
 // Creating objects
@@ -25,9 +29,6 @@ Store.prototype.randomSales = randomSales;
 Store.prototype.cookieSales = cookieSales;
 Store.prototype.renderStoreInfo = renderStoreInfo;
 Store.prototype.renderCookieTosser = renderCookieTosser;
-
-// Array of objects
-var storeObjects = [firstAndPike, seaTacAirport, seattleCenter, capitolHill, alki];
 
 // Calculate random customers and cookie sales
 function randomSales() {
