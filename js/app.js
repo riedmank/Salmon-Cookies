@@ -32,18 +32,20 @@ Store.prototype.renderCookieTosser = renderCookieTosser;
 
 // Calculate random customers and cookie sales
 function randomSales() {
-  this.minCustomers = Math.ceil(this.minCustomers);
-  this.maxCustomers = Math.floor(this.maxCustomers);
   return (Math.floor(Math.random() * (this.maxCustomers - this.minCustomers + 1)) + this.minCustomers) * this.avgSales;
 }
 
 // Add store name, cookie sales, and totals to array
 function cookieSales() {
-  for(var i = 0; i <= 15; i++) {
-    this.hourlySales[i] = Math.round(this.randomSales());
+  this.hourlySales.push(this.name);
+  for(var i = 0; i < 15; i++) {
+    this.hourlySales.push(Math.round(this.randomSales()));
   }
-  this.hourlySales.push(this.hourlySales.reduce((total, element) => total + element, 0));
-  this.hourlySales.splice(0, 1, this.name);
+  var sum = this.hourlySales[1];
+  for (var j = 2; j < this.hourlySales.length; j++) {
+    sum += this.hourlySales[j];
+  }
+  this.hourlySales.push(sum);
   return this.hourlySales;
 }
 
@@ -117,9 +119,8 @@ formElt.addEventListener('submit', function(e) {
   if (parseInt(e.target.minCustomers.value) > parseInt(e.target.maxCustomers.value)) {
     return alert('Minimum customers needs to be lower than maximum customers.');
   }
-  var userStore = new Store(e.target.name.value, e.target.minCustomers.value, e.target.maxCustomers.value, e.target.avgSales.value);
+  var userStore = new Store(e.target.name.value, Number(e.target.minCustomers.value), Number(e.target.maxCustomers.value), Number(e.target.avgSales.value));
   this.hourlySales = userStore.cookieSales();
-  storeObjects.push(userStore);
   storeObjects[storeObjects.length - 1].renderStoreInfo('body');
   var tfooter = document.getElementById('foot');
   var foot = document.getElementById('dailyTotals');
